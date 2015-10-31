@@ -1,0 +1,66 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="nav-bar-responsive">
+<template>
+	<link rel="stylesheet" href="main.css">
+	<div id="under-header" class="under-header"></div>
+	<header class="header">
+		<div class="header-mobile">
+			<h1 class="header-logo">Logo</h1>
+
+			<button id="btnMenu" class="header-btn-nav">
+				<!-- Menu -->
+			</button>
+		</div>
+
+		<nav class="header-menu-navbar">
+			<ul id="navbarMenu" class="header-menu-list">
+				<li class="header-menu-list-item">
+					<a href="#">Inicio</a>
+				</li>
+				<li class="header-menu-list-item">
+					<a href="#">Acerca de</a>
+				</li>
+				<li class="header-menu-list-item">
+					<a href="#">Blog</a>
+				</li>
+				<li class="header-menu-list-item">
+					<a href="#">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<script>
+		(function () {
+			var btnMenu = document.getElementById('btnMenu');
+			var navbarMenu = document.getElementById('navbarMenu');
+			var underHeader = document.getElementById("under-header");
+
+			btnMenu.addEventListener('click', onClickMenu);
+
+			function onClickMenu() {
+				navbarMenu.classList.toggle('header-menu-list--show');
+				underHeader.classList.toggle('under-header--show');
+			}
+
+		}());
+	</script>
+
+</template>
+
+<script>
+	Polymer({
+		is: "nav-bar-responsive",
+		properties: {
+			who: {
+				type: String,
+				value: "Platzi"
+			}
+		}
+	});
+</script>
+</dom-module>
+
+
